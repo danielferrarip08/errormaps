@@ -1,5 +1,17 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, NgZone } from '@angular/core';
+import {
+  GoogleMap,
+  GoogleMapOptions,
+  GoogleMaps,
+  GoogleMapsEvent,
+  Marker,
+  MarkerCluster,
+  MarkerClusterOptions,
+  MarkerOptions,
+} from '@ionic-native/google-maps';
+import { Loading, LoadingController, NavController, Platform } from 'ionic-angular';
+
+import prospectMock from '../../providers/prospect/prospect-mock';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +19,18 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  map?: GoogleMap;
+  showInfo: boolean;
+  dadosProspect: any = {};
+  prospects: any = [];
+  title: string = "Prospects nas Proximidades";
+  loader: Loading;
 
+  constructor(public navCtrl: NavController, public ngZone: NgZone, public platform: Platform, private loadingCtrl: LoadingController) {
+
+  }
+  goTo() {
+    this.navCtrl.push('NovaPaginaPage')
   }
 
 }

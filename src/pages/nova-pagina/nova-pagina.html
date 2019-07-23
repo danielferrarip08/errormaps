@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Maps
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="map">
+
+    <ion-card class="infoMapa" *ngIf="showInfo" color="primary">
+      <ion-card-header>
+        <ion-item color="primary">
+          {{dadosProspect.nome}}
+          <button ion-button clear color="light" item-right (click)="fecharInfo()">
+            <ion-icon name='close' item-right></ion-icon>
+          </button>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-item>
+        <h3>Telefone</h3>
+        <p>{{dadosProspect.fone}}</p>
+      </ion-item>
+
+      <ion-item>
+        <h3>Endereço</h3>
+        <p>{{dadosProspect.enderecoCompleto}}</p>
+      </ion-item>
+
+      <ion-item>
+        <h3>Interesse</h3>
+        <p>{{dadosProspect.descreveInteresse}}</p>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button icon-left clear item-left (click)="gerenciar(dadosProspect)">
+          <ion-icon name="ios-paper"></ion-icon> Mais detalhes
+        </button>
+      </ion-item>
+    </ion-card>
+
+  </div>
+
+</ion-content>

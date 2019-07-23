@@ -1,0 +1,23 @@
+page-nova-pagina {
+    ion-app._gmaps_cdv_ .nav-decor {
+        background-color: transparent !important;
+    }
+
+    #map {
+        height: 100%;
+    }
+
+    .infoMapa {
+        position: absolute;
+        bottom: 10%;
+        z-index: 99;
+
+        h3 {
+            color: black;
+        }
+    }
+
+    .card-header {
+        padding: 5px;
+    }
+}
